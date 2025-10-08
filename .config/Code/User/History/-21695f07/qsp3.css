@@ -1,0 +1,108 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "GeistMono Nerd Font", "Material Design Icons", "Font Awesome 6 Free", sans-serif;
+    /* max-height: 35px; */
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Using Surface0 for the background and Text for the default color */
+#workspaces,
+#window,
+#keyboard-state,
+#custom-pacman,
+#clock,
+#pulseaudio,
+#network,
+#custom-bluetooth,
+#backlight,
+#battery,
+#tray {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 8px;
+    border-radius: 6px;
+    transition: none;
+    background: #313244;
+    /* Surface0 */
+    color: #cdd6f4;
+    /* Text */
+}
+
+#workspaces {
+    margin-top: 0px;
+}
+
+#workspaces button {
+    background: transparent;
+    padding: 5px;
+    font-size: 18px;
+    color: #cdd6f4;
+    /* Text */
+}
+
+#workspaces button:hover {
+    background: #45475a;
+    /* Surface1 */
+    border-radius: 4px;
+}
+
+/* Using Blue for the active workspace indicator */
+#workspaces button.active {
+    color: #89b4fa;
+    /* Blue */
+}
+
+/* Using Green for muted state */
+#pulseaudio.muted {
+    background-color: #a6e3a1;
+    /* Green */
+    color: #1e1e2e;
+    /* Base */
+}
+
+/* Using Green for charging state */
+#battery.charging {
+    color: #1e1e2e;
+    /* Base */
+    background-color: #a6e3a1;
+    /* Green */
+}
+
+/* Using Yellow for warning state */
+#battery.warning:not(.charging) {
+    background-color: #f9e2af;
+    /* Yellow */
+    color: #1e1e2e;
+    /* Base */
+}
+
+/* Using Red for critical state */
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    /* Red */
+    color: #1e1e2e;
+    /* Base */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #cdd6f4;
+        /* Text */
+        color: #1e1e2e;
+        /* Base */
+    }
+}

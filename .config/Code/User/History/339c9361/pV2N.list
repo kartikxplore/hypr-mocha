@@ -1,0 +1,20 @@
+[Default Applications]
+text/plain=code-oss.desktop
+application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/http=vivaldi-stable.desktop
+x-scheme-handler/https=vivaldi-stable.desktop
+
+# Set Vivaldi for HTML files
+text/html=vivaldi-stable.desktop
+application/xhtml+xml=vivaldi-stable.desktop
+
+# Set Swayimg for common image types
+image/jpeg=swayimg.desktop
+image/png=swayimg.desktop
+image/gif=swayimg.desktop
+image/webp=swayimg.desktop
+image/bmp=swayimg.desktop
+image/svg+xml=swayimg.desktop
+
+[Added Associations]
+text/plain=code-oss.desktop;

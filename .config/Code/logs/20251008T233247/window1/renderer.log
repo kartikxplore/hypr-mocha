@@ -1,0 +1,18 @@
+2025-10-08 23:32:48.205 [info] Started local extension host with pid 11866.
+2025-10-08 23:32:50.107 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-10-08 23:32:50.893 [info] [perf] Render performance baseline is 46ms
+2025-10-08 23:40:47.888 [error] Error: The editor could not be opened because the file was not found.
+    at IDe.gc (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2625:81151)
+    at async IDe.setInput (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2625:80309)
+    at async PGe.S (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:610:58577)
+    at async PGe.L (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:610:57132)
+    at async PGe.openEditor (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:610:56214)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:722:23355
+    at async o (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:614:44978)
+2025-10-08 23:41:23.648 [error] Error: The editor could not be opened because the file was not found.
+    at IDe.gc (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2625:81151)
+    at async IDe.setInput (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:2625:80309)
+    at async PGe.S (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:610:58577)
+    at async PGe.L (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:610:57132)
+    at async PGe.openEditor (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:610:56214)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:722:23355

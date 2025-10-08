@@ -1,0 +1,197 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "04cf3bde7067c677e522efeb0ec0dc58eaf2f350fb40601d5890d83b18ed6cfe",
+    "telemetry.devDeviceId": "9056cad4-8450-414b-9c16-669729e73a22",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/kartik/.config"
+            }
+        ],
+        "emptyWindows": [
+            {
+                "backupFolder": "1759947474784"
+            }
+        ]
+    },
+    "windowControlHeight": 50,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/kartik/.config": "__default__profile__",
+            "file:///home/kartik/.config/hypr": "__default__profile__",
+            "file:///home/kartik/hypr-dotfiles/.config": "__default__profile__",
+            "file:///home/kartik/py-toold": "__default__profile__",
+            "file:///home/kartik/py-toold/Scraper%20v0.1": "__default__profile__",
+            "file:///home/kartik/hypr-dots%20everforest": "__default__profile__",
+            "file:///home/kartik/.config/rofi": "__default__profile__",
+            "file:///home/kartik/.config/waybar": "__default__profile__",
+            "file:///home/kartik/.config/themes": "__default__profile__",
+            "file:///home/kartik/fcc-learn/rdb-alpha": "__default__profile__",
+            "vscode-remote://dev-container%2B7b22686f737450617468223a222f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c706861222c226c6f63616c446f636b6572223a66616c73652c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspace/project": "__default__profile__",
+            "vscode-remote://dev-container%2B7b22686f737450617468223a222f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c706861222c226c6f63616c446f636b6572223a66616c73652c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f686f6d652f6b617274696b2f6663632d6c6561726e2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspace": "__default__profile__",
+            "file:///home/kartik/fcc-l/rdb-alpha": "__default__profile__",
+            "vscode-remote://dev-container%2B7b22686f737450617468223a222f686f6d652f6b617274696b2f6663632d6c2f7264622d616c706861222c226c6f63616c446f636b6572223a66616c73652c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f686f6d652f6b617274696b2f6663632d6c2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f686f6d652f6b617274696b2f6663632d6c2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f686f6d652f6b617274696b2f6663632d6c2f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspace/project": "__default__profile__",
+            "file:///home/kartik/frcs/rdb-alpha": "__default__profile__",
+            "vscode-remote://dev-container%2B7b22686f737450617468223a222f686f6d652f6b617274696b2f667263732f7264622d616c706861222c226c6f63616c446f636b6572223a66616c73652c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f686f6d652f6b617274696b2f667263732f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f686f6d652f6b617274696b2f667263732f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f686f6d652f6b617274696b2f667263732f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspace/project": "__default__profile__",
+            "file:///home/kartik": "__default__profile__",
+            "file:///home/kartik/fcc/rdb-alpha": "__default__profile__",
+            "vscode-remote://dev-container%2B7b22686f737450617468223a222f686f6d652f6b617274696b2f6663632f7264622d616c706861222c226c6f63616c446f636b6572223a66616c73652c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f686f6d652f6b617274696b2f6663632f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f686f6d652f6b617274696b2f6663632f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f686f6d652f6b617274696b2f6663632f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspace/project": "__default__profile__",
+            "file:///home/kartik/bash-fcc/rdb-alpha": "__default__profile__",
+            "vscode-remote://dev-container%2B7b22686f737450617468223a222f686f6d652f6b617274696b2f626173682d6663632f7264622d616c706861222c226c6f63616c446f636b6572223a66616c73652c22636f6e66696746696c65223a7b22246d6964223a312c22667350617468223a222f686f6d652f6b617274696b2f626173682d6663632f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2265787465726e616c223a2266696c653a2f2f2f686f6d652f6b617274696b2f626173682d6663632f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c2270617468223a222f686f6d652f6b617274696b2f626173682d6663632f7264622d616c7068612f2e646576636f6e7461696e65722f646576636f6e7461696e65722e6a736f6e222c22736368656d65223a2266696c65227d7d/workspace/project": "__default__profile__",
+            "file:///home/kartik/lpgen/1": "__default__profile__"
+        },
+        "emptyWindows": {
+            "1759947474784": "__default__profile__"
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "backupPath": "/home/kartik/.config/Code/Backups/1759947474784",
+            "uiState": {
+                "mode": 1,
+                "x": 15,
+                "y": 60,
+                "width": 1890,
+                "height": 1005,
+                "zoomLevel": 2
+            }
+        },
+        "openedWindows": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e2e",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cdd6f4",
+            "background": "#1e1e2e",
+            "editorBackground": "#1e1e2e",
+            "titleBarBackground": "#11111b",
+            "titleBarBorder": "rgba(0, 0, 0, 0)",
+            "activityBarBackground": "#11111b",
+            "activityBarBorder": "rgba(0, 0, 0, 0)",
+            "sideBarBackground": "#181825",
+            "sideBarBorder": "rgba(0, 0, 0, 0)",
+            "statusBarBackground": "#11111b",
+            "statusBarBorder": "rgba(0, 0, 0, 0)",
+            "statusBarNoFolderBackground": "#11111b",
+            "windowBorder": "rgba(0, 0, 0, 0)"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 0,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 459,
+            "workspaces": {
+                "6290755a50b08defbf71b46a17430d04": {
+                    "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
+                },
+                "fd73213add9792adfc52e43133b36b8a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "a69f0627be6f62627392e65331c2b740": {
+                    "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
+                },
+                "d796c3b3f72b821ec53e7f7a82832c1d": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "493cbb00940bf55d61734a0c0d2513aa": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "f2e806aded850247c0c9c113b0bf6ae5": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "de796bb4b28f824e0ecd97d275d54334": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d48664976c4f31491bbcbfeb6440aa89": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "26ac9dc2da0384d2fa327f93f1aa684a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "72b9679336cb77595f42a373e5efe10b": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "995fdbc50b00cb2d99926e64795f5615": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "cafd2de61fccce77d13a5ad283e5f606": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "b90b10adda7bf7af9bfd4d82df019d74": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "3473975b81af9845d02d6fafd2a6aa88": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "23a335ea1d4736d3609d1676a2f5e5a1": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "a7f65db673587fb91082f2f2b22aa70d": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "ba47ec50ee1a296af68d289fa936949b": {
+                    "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
+                },
+                "a312ca690f2dbbd6623cfbd53ef7b3f2": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "9881dd9ead9a0639531b0efbc11cfcc1": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "1b5eb76df8a445bda4befda4cc1c8b45": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "a1d32e1b8749a26cbc9dab177ffcc8e2": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "df0d5549762a2573096ec6da86038305": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": true
+                },
+                "a211f045cff24ee0e5adc7a190caf469": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "fdedbec73c020a5a90d6713f9988ca56": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}

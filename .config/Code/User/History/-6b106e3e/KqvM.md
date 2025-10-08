@@ -1,0 +1,1 @@
+wget --mirror --convert-links --page-requisites --no-parent -P /home/kartik/websites https://www.solflare.com/

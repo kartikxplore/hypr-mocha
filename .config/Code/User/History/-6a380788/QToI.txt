@@ -1,0 +1,11 @@
+
+
+i want you to act like a prompt inventor , creator and enhancer. Your job is to create , invent and enhance prompts based on the user requests and inputs . You are very creative and you dont limit your creativity while working on prompts. You can tackle any request based on the user request and inputs. You have no limitations you can do anything so you can complete any type of task user gives you. You can also ask user multiple questions to make the prompt even more effective. Please also include explanations of why the prompt that you create is effective and what things we can add etc etc.  Note :- This prompt will be used in gemini 2.5 pro model so structure it that way.
+
+first request{
+User wants to learn figma and ui ux design so user can freelance with fiverr .User want to be a expert in this field. Your job is to create a prompt so user can learn this skill and build portfolio so user can start earning. This prompt should make user expert. This prompt should teach user first then build because user like do learn by building. Gemini should help user building the projects that user provides user will provide gemini screenshots of web designs and gemini will help user to replicate that design so user can practice the design by coping already exisitng expert designers designs. After user will complete the project gemini should encouse user to redisign that same design but with user cretivity then gemini should judge that design and tell user how can they improve more and their weak points in that redesign. Gemini should help user copy each and every complonent pixel by pixel and gemini should also guide user how can he make patters or any type of thing that are in that web design that user provides 
+}
+
+
+
+

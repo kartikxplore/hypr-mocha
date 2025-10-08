@@ -1,0 +1,21 @@
+[Default Applications]
+text/plain=code-oss.desktop
+application/pdf=org.gnome.Papers.desktop
+text/html=vivaldi-stable.desktop
+image/svg+xml=swayimg.desktop
+image/png=swayimg.desktop
+image/webp=swayimg.desktop
+text/x-csrc=code.desktop
+application/x-shellscript=code.desktop
+image/jpeg=swayimg.desktop
+
+[Added Associations]
+text/plain=code.desktop;code-oss.desktop;
+text/html=vivaldi-stable.desktop;
+image/svg+xml=swayimg.desktop;
+image/png=swayimg.desktop;
+image/webp=swayimg.desktop;
+application/pdf=org.gnome.Papers.desktop;
+text/x-csrc=code.desktop;
+application/x-shellscript=code.desktop;
+image/jpeg=swayimg.desktop;

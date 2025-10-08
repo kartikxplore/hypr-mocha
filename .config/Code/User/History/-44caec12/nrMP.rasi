@@ -1,0 +1,124 @@
+/*
+ * Catppuccin Mocha rofi theme
+ *
+ * Created by https://github.com/justleoo
+ */
+
+* {
+    background-color: transparent;
+    text-color:       #cdd6f4; /* Text */
+
+    rosewater: #f5e0dc;
+    flamingo:  #f2cdcd;
+    pink:      #f5c2e7;
+    mauve:     #cba6f7;
+    red:       #f38ba8;
+    maroon:    #eba0ac;
+    peach:     #fab387;
+    yellow:    #f9e2af;
+    green:     #a6e3a1;
+    teal:      #94e2d5;
+    sky:       #89dceb;
+    sapphire:  #74c7ec;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+
+    base:      #1e1e2e;
+    surface0:  #313244;
+    surface1:  #45475a;
+    overlay2:  #9399b2;
+
+    font: "GeistMono Nerd Font 12";
+}
+
+window {
+    background-color: @base;
+    border: 2px;
+    border-color: @mauve;
+    border-radius: 10px;
+    height: 40%;
+    width: 30%;
+    location: center;
+    anchor:   center;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 2%;
+    padding: 2% 1% 2% 1%;
+    vertical-align: 0.5;
+}
+
+listview {
+    border: 0px;
+    columns: 1;
+    lines: 8;
+    spacing: 1%;
+}
+
+element {
+    padding: 1% 2% 1% 2%;
+    border-radius: 8px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 2ch;
+    padding: 0 10px 0 0;
+}
+
+element normal.normal {
+    text-color: @text-color;
+}
+
+element normal.urgent {
+    text-color: @red;
+}
+
+element normal.active {
+    text-color: @mauve;
+}
+
+element selected.normal {
+    background-color: @surface1;
+    text-color: @text-color;
+}
+
+element selected.urgent {
+    background-color: @surface1;
+    text-color: @red;
+}
+
+element selected.active {
+    background-color: @surface1;
+    text-color: @mauve;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding: 1%;
+    border-radius: 8px;
+    background-color: @surface0;
+    margin: 0% 0% 2% 0%;
+}
+
+prompt {
+    padding: 1%;
+    background-color: @mauve;
+    text-color: @base;
+    border-radius: 8px;
+    margin: 0 10px 0 0;
+}
+
+entry {
+    placeholder: "Search";
+    placeholder-color: @overlay2;
+}

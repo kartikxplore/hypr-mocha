@@ -1,0 +1,86 @@
+#!/bin/bash
+
+# forestify-pro: A script to recolor an image to the Everforest theme.
+# Version: 3.0 (Flexible Control)
+#
+# This version uses a high-quality HALD-CLUT method and allows for fine-tuning
+# of the effect's strength, brightness, and contrast.
+
+set -e
+
+# --- Configuration ---
+CONFIG_DIR="$HOME/.config/theming"
+PALETTE_FILE="$CONFIG_DIR/everforest-hard-palette.png"
+# To change the CLUT style, delete the file below and edit the generation command.
+CLUT_FILE="$CONFIG_DIR/clut_everforest_hard.png"
+IDENTITY_CLUT_FILE="$CONFIG_DIR/clut_identity_8.png"
+
+PALETTE_COLORS=(
+  "#272E33" "#2E383C" "#D3C6AA" "#E67E80" "#DBBC7F"
+  "#A7C080" "#7FBBB3" "#D699B6"
+)
+
+# --- Argument Parsing ---
+if [[ "$#" -lt 2 || "$#" -gt 5 ]]; then
+    echo "Usage: $(basename "$0") <input> <output> [strength] [brightness] [contrast]"
+    echo ""
+    echo "Arguments:"
+    echo "  <input>           Path to the original wallpaper."
+    echo "  <output>          Path to save the new themed wallpaper."
+    echo "  [strength]        Optional: Effect intensity from 0-100. (Default: 75)"
+    echo "  [brightness]      Optional: Percentage brightness change. (Default: 0)"
+    echo "  [contrast]        Optional: Percentage contrast change. (Default: 5)"
+    exit 1
+fi
+
+INPUT_IMG=$1
+OUTPUT_IMG=$2
+# Set optional arguments from user input, or use sensible defaults.
+STRENGTH=${3:-75}
+BRIGHTNESS=${4:-0}
+CONTRAST=${5:-5}
+
+# --- Setup ---
+# Create config directory if it doesn't exist
+mkdir -p "$CONFIG_DIR"
+
+# Check if the palette file exists, create it if not.
+if [[ ! -f "$PALETTE_FILE" ]]; then
+    echo "Palette file not found. Creating it..."
+    convert -size 1x1 "${PALETTE_COLORS[@]/#/xc:}" +append "$PALETTE_FILE"
+fi
+
+# Check if the identity CLUT exists, create it if not.
+if [[ ! -f "$IDENTITY_CLUT_FILE" ]]; then
+    echo "Identity CLUT not found. Creating it..."
+    convert hald:8 "$IDENTITY_CLUT_FILE"
+fi
+
+# Check if the Everforest CLUT exists, create it if not.
+if [[ ! -f "$CLUT_FILE" ]]; then
+    echo "Everforest CLUT not found. Creating it..."
+    # This line determines the CLUT style.
+    # -dither FloydSteinberg -> Smooth, photographic gradients. (Default)
+    # +dither              -> Hard, posterized, stylized look.
+    convert "$IDENTITY_CLUT_FILE" -dither FloydSteinberg -remap "$PALETTE_FILE" "$CLUT_FILE"
+fi
+
+# --- Image Processing ---
+# Build the optional post-processing arguments string
+POST_PROCESS_ARGS=""
+if [[ "$BRIGHTNESS" -ne 0 || "$CONTRAST" -ne 0 ]]; then
+    POST_PROCESS_ARGS="-brightness-contrast ${BRIGHTNESS}x${CONTRAST}"
+fi
+
+echo "Recoloring '$INPUT_IMG'..."
+echo " > Strength: ${STRENGTH}%, Brightness: ${BRIGHTNESS}%, Contrast: ${CONTRAST}%"
+
+# Apply the HALD-CLUT, blend it with the original based on STRENGTH,
+# and then apply any post-processing adjustments.
+convert "$INPUT_IMG" \
+    \( -clone 0 "$CLUT_FILE" -hald-clut \) \
+    -compose Blend -define compose:args="${STRENGTH}" -composite \
+    $POST_PROCESS_ARGS \
+    "$OUTPUT_IMG"
+
+echo "Done! Saved as '$OUTPUT_IMG'."

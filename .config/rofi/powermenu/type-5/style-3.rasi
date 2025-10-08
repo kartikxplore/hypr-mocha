@@ -1,0 +1,93 @@
+/*
+///////////////////////////////
+///////////////////////////////
+//
+// ██████╗  ██████╗ ███████╗██╗
+// ██╔══██╗██╔═══██╗██╔════╝██║
+// ██████╔╝██║   ██║█████╗  ██║
+// ██╔══██╗██║   ██║██╔══╝  ██║
+// ██║  ██║╚██████╔╝██║     ██║
+// ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+//
+///////////////////////////////
+// Rofi Powermenu - Catppuccin Mocha ///
+///////////////////////////////
+*/
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons: false;
+}
+
+* {
+    font: "GeistMono Nerd Font 12", "Material Design Icons 12";
+    /* Catppuccin Mocha Colors */
+    text-color:       #cdd6f4;  /* Text */
+    background-color: #1e1e2e;  /* Base */
+}
+
+/* MAIN WINDOW */
+window {
+    background-color: rgba(30, 30, 46, 0.9);  /* Base w/ opacity */
+    border-radius: 12px;
+    padding: 20px;
+    width: 700px;
+    blur: true;
+    transparency: "real";
+    spacing: 30px;
+    children: [message, listview];
+}
+
+/* LISTVIEW */
+listview {
+    columns: 3;
+    lines: 2;
+    dynamic: true;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 15px;
+    background-color: transparent;
+    scrollbar: false;
+    margin-top: 30px;
+}
+
+/* ELEMENT BUTTONS */
+element {
+    padding: 20px 12px;
+    border-radius: 10px;
+    background-color: #313244;   /* Surface0 */
+    text-color: #cdd6f4;         /* Text */
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+element selected {
+    background-color: rgba(203, 166, 247, 0.2);  /* Mauve soft hover */
+    text-color: #cdd6f4; /* Text */
+}
+
+/* BUTTON TEXT */
+element-text {
+    font: "GeistMono Nerd Font 14", "Material Design Icons 14";
+    background-color: transparent;
+    text-color: inherit;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+message {
+    enabled: true;
+    margin: 10px 0px 0px 0px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: rgba(69, 71, 90, 0.6); /* Surface1 w/ opacity */
+    text-color: #a6adc8; /* Subtext0 */
+    font: "GeistMono Nerd Font 10", "Material Design Icons 10";
+}
+
+textbox {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+}
