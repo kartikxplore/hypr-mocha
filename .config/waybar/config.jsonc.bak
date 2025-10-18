@@ -1,100 +1,151 @@
-
-
 // ██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
 // ██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
 // ██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝
 // ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
 // ╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
 //  ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-                                                   
-
-                                                                   
-///////////////////////////////
-// /////  Waybar Config   /////
-// /////  For AetherOS    /////
-///////////////////////////////
-
-
 {
-    "layer": "top",
-    "height": 50,
-    "spacing": 10,
-    "modules-left": ["custom/apps", "hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["clock", "custom/audio", "custom/brightness", "network", "battery", "custom/power"],
-
-    "custom/apps": {
-        //	"format": "",
-        "format": "",
-        // "format": "<img src='/home/aether/.config/waybar/icons/endeavouros.png' width=32 height=32 />",
-        "tooltip-format": "Artifacts",
-        "on-click": "/home/aether/.config/rofi/launchers/type-6/launcher.sh"
-    },
-
-    "custom/power": {
-        "format": "",
-        "tooltip-format": "Eternal Slumber",
-        "on-click": "/home/aether/.config/rofi/powermenu/type-6/powermenu.sh"
-    },
-
-    "hyprland/window": {
-        "max-length": 30
-    },
-
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    "margin": "10 10 0 10",
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window",
+        "keyboard-state",
+        "custom/pacman"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "custom/hyprsunset",
+        "custom/bluetooth",
+        "network"
+        
+    ],
+    //***************************
+    //* Modules configuration  *
+    //***************************
     "hyprland/workspaces": {
-        "format": "",
         "persistent-workspaces": {
             "*": 5
         }
     },
-
-    "custom/audio": {
-      "exec": "~/.config/waybar/scripts/vol_status.sh",
-      "interval": 1,
-      "format": "{}",
-      "return-type": "plain",
-      "tooltip": false,
-      "on-right-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-      "on-click": "pavucontrol"
-    },
-
-    "custom/brightness": {
-      "exec": "~/.config/waybar/scripts/brightness_stat.sh",
-      "format": "{}",
-      "return-type": "plain",
-      "tooltip": false,
-      "interval": 1,
-      "on-scroll-up": "brightnessctl set +5%",
-      "on-scroll-down": "brightnessctl set 5%-"
-
-    },
-
-    "battery": {
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "bad": 15
-        },
-        "format": "{capacity}% ",
-        "format-full": "{capacity}% ",
-        "format-charging": "{capacity}% "
-    },
-
-    "clock": {
+    "hyprland/language": {
+        "format": "{} 󰌓",
+        "min-length": 5,
         "tooltip": false
     },
-
-    "memory": {
-        "format": "{}% "
+    "hyprland/window": {
+        "max-length": 20
+    },
+    "keyboard-state": {
+        //"numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "󰌾",
+            "unlocked": "󰌿"
+        }
+    },
+    "custom/pacman": {
+        "format": "{} ",
+        "interval": 7200, // every 2 hours
+        "exec": "(checkupdates; yay -Qu) | wc -l",
+        "exec-if": "which checkupdates && which yay",
+        "on-click": "kitty --title 'System Update' -e sh -c 'yay -Syu; echo \"Done - Press enter to exit\"; read'",
+        "tooltip": true
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a, %d %b, %I:%M %p}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "reverse-scrolling": 1,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}󰂯 {format_source}",
+        "format-bluetooth-muted": "󰂲 {icon}󰂯 {format_source}",
+        "format-muted": "󰸈 {format_source}",
+        "format-source": "{volume}% 󰍬",
+        "format-source-muted": "󰍭",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰄜",
+            "portable": "󰄜",
+            "car": "󰄋",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "on-right-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "on-click": "pavucontrol",
+        "min-length": 13
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) 󰤨",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} 󰢳",
+        "format-linked": "{ifname} (No IP) 󰌙",
+        "format-disconnected": "Disconnected 󰤮",
+        "on-click": "iwdgui"
+    },
+    "custom/bluetooth": {
+        "format": "{}",
+        "interval": 15,
+        "exec": "~/.config/waybar/scripts/bluetooth.sh",
+        "on-click": "overskride",
+        "tooltip": true
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "󰃞",
+            "󰃞",
+            "󰃝",
+            "󰃝",
+            "󰃚",
+            "󰃚",
+            "󰃛"
+        ],
+        "min-length": 7
+    },
+    "custom/hyprsunset": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/hyprsunset-status.sh",
+        "on-click": "~/.config/waybar/scripts/toggle-hyprsunset.sh; sleep 0.1; pkill -SIGRTMIN+8 waybar",
+        "interval": 5,
+        "tooltip": true
     },
 
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected "
+    // "battery": {
+    //     "bat": "BAT0",
+    //     "states": {
+    //         "warning": 30,
+    //         "critical": 15
+    //     },
+    //     "format": "{capacity}% {icon}",
+    //     "format-charging": "{capacity}% 󰂄",
+    //     "format-plugged": "{capacity}% 󰚥",
+    //     "format-alt": "{time} {icon}",
+    //     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰁹"]
+    // },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 0
     }
 }

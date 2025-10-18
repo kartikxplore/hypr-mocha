@@ -1,9 +1,43 @@
+/*******************************************************************************
+ * Catppuccin Mocha Theme Definition
+ *******************************************************************************/
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color sapphire #74c7ec;
+@define-color sky #89dceb;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color peach #fab387;
+@define-color maroon #eba0ac;
+@define-color red #f38ba8;
+@define-color mauve #cba6f7;
+@define-color pink #f5c2e7;
+@define-color flamingo #f2cdcd;
+@define-color rosewater #f5e0dc;
+
+/*******************************************************************************
+ * Global Styles
+ *******************************************************************************/
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: "GeistMono Nerd Font", "Material Design Icons", "Font Awesome 6 Free", sans-serif;
-    /* max-height: 35px; */
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
 }
 
 window#waybar {
@@ -14,7 +48,30 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/* Using Surface0 for the background and Text for the default color */
+tooltip {
+    color: @text;
+    background: @crust;
+    border: 1px solid @surface0;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+tooltip label {
+    color: @text;
+}
+
+/*******************************************************************************
+ * Module Groups
+ *******************************************************************************/
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0px 4px;
+}
+
+/*******************************************************************************
+ * Module Base Styles
+ *******************************************************************************/
 #workspaces,
 #window,
 #keyboard-state,
@@ -27,88 +84,224 @@ window#waybar.hidden {
 #backlight,
 #battery,
 #tray {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
     margin-right: 8px;
-    border-radius: 6px;
-    transition: none;
-    background: #313244;
-    /* Surface0 */
-    color: #cdd6f4;
-    /* Text */
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+    background: @crust;
+    color: @text;
 }
 
+/*******************************************************************************
+ * Workspaces - Vibrant & Clear
+ *******************************************************************************/
 #workspaces {
+    padding: 2px 4px;
     margin-top: 0px;
+    background: @crust;
+    border-radius: 10px;
 }
 
 #workspaces button {
     background: transparent;
-    padding: 5px;
-    font-size: 18px;
-    color: #cdd6f4;
-    /* Text */
+    padding: 4px 10px;
+    margin: 1px 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: @lavender;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    min-width: 28px;
 }
 
 #workspaces button:hover {
-    background: #45475a;
-    /* Surface1 */
-    border-radius: 4px;
+    background: @surface0;
+    color: @sky;
 }
 
-/* Using Blue for the active workspace indicator */
 #workspaces button.active {
-    color: #cba6f7;
-    /* Mauve */
+    color: @crust;
+    background: @mauve;
+    padding: 4px 12px;
 }
 
-/* Using Green for muted state */
+#workspaces button.urgent {
+    background: @red;
+    color: @base;
+}
+
+#workspaces button.persistent {
+    color: @peach;
+}
+
+#workspaces button.urgent.persistent {
+    color: @base;
+}
+
+#workspaces button.active.persistent {
+    color: @crust;
+}
+
+#workspaces button.empty {
+    color: @subtext0;
+}
+
+/*******************************************************************************
+ * Window Title
+ *******************************************************************************/
+#window {
+    color: @blue;
+    background: @crust;
+}
+
+#window.hidden {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/*******************************************************************************
+ * Clock
+ *******************************************************************************/
+#clock {
+    color: @peach;
+    font-weight: bold;
+}
+
+/*******************************************************************************
+ * Audio
+ *******************************************************************************/
+#pulseaudio {
+    color: @sapphire;
+}
+
 #pulseaudio.muted {
-    background-color: #a6e3a1;
-    /* Green */
-    color: #1e1e2e;
-    /* Base */
+    background-color: @green;
+    color: @base;
 }
 
-/* Using Green for charging state */
+/*******************************************************************************
+ * Network
+ *******************************************************************************/
+#network {
+    color: @mauve;
+}
+
+#network.disconnected {
+    background-color: @red;
+    color: @base;
+}
+
+/*******************************************************************************
+ * Backlight
+ *******************************************************************************/
+#backlight {
+    color: @yellow;
+}
+
+/*******************************************************************************
+ * Battery
+ *******************************************************************************/
+#battery {
+    color: @green;
+}
+
 #battery.charging {
-    color: #1e1e2e;
-    /* Base */
-    background-color: #a6e3a1;
-    /* Green */
+    color: @base;
+    background-color: @green;
 }
 
-/* Using Yellow for warning state */
 #battery.warning:not(.charging) {
-    background-color: #f9e2af;
-    /* Yellow */
-    color: #1e1e2e;
-    /* Base */
+    background-color: @yellow;
+    color: @base;
 }
 
-/* Using Red for critical state */
 #battery.critical:not(.charging) {
-    background-color: #f38ba8;
-    /* Red */
-    color: #1e1e2e;
-    /* Base */
-    animation-name: blink;
+    background-color: @red;
+    color: @base;
+    animation-name: battery-blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-@keyframes blink {
+@keyframes battery-blink {
     to {
-        background-color: #cdd6f4;
-        /* Text */
-        color: #1e1e2e;
-        /* Base */
+        background-color: @text;
+        color: @base;
     }
 }
 
-/* Using Yellow for active state */
+/*******************************************************************************
+ * Keyboard State
+ *******************************************************************************/
+#keyboard-state {
+    color: @sky;
+}
+
+/*******************************************************************************
+ * System Tray
+ *******************************************************************************/
+#tray {
+    padding: 6px 10px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+    color: @base;
+}
+
+/*******************************************************************************
+ * Custom Modules
+ *******************************************************************************/
+#custom-pacman {
+    color: @green;
+}
+
+#custom-bluetooth {
+    color: @blue;
+}
+
+#custom-hyprsunset {
+    color: @text;
+    font-size: 18px;
+    
+    /* * Fix for Vertical Centering:
+     * Your bar is 32px high. The icon is 18px.
+     * (32 - 18) = 14px of vertical space.
+     * We put 7px on top and 7px on bottom.
+     */
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    /* * Fix for Horizontal Centering:
+     * The icon is pushed to the right. We pull it left by
+     * reducing left padding and increasing right padding.
+     * (Base was 12px/12px).
+     */
+    padding-left: 10px;
+    padding-right: 14px; 
+}
+
 #custom-hyprsunset.active {
-    color: #f9e2af; /* Catppuccin Yellow */
+    color: @yellow;
+    background-color: @surface1;
+}
+
+#custom-hyprsunset.inactive {
+    color: @subtext0;
 }

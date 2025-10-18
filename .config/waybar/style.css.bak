@@ -1,178 +1,114 @@
 * {
-    font-family: "Literata", "Geist Mono Nerd Font", monospace;
-    font-size: 13px;
-}
-
-/* Waybar */
-#waybar {
-    padding: 0 8px;
-    background: transparent;
+    border: none;
+    border-radius: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "GeistMono Nerd Font", "Material Design Icons", "Font Awesome 6 Free", sans-serif;
+    /* max-height: 35px; */
 }
 
 window#waybar {
-    padding: 0;
+    background: transparent;
 }
 
-#tooltip {
-    background: rgba(59, 45, 38, 0.9); /* leathery brown */
-    color: #efeee9;
-    border: 1px solid #c2a35e; /* brass edge */
-    border-radius: 8px;
-    padding: 6px 10px;
+window#waybar.hidden {
+    opacity: 0.2;
 }
 
-
-
-/* LEFT MODULES */
-
-/* Custom apps */
-#custom-apps {
-    border: 2px solid #efeee9;
-    margin-left: 10px;
-    padding-right: 5px;
-    min-width: 40px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+/* Using Surface0 for the background and Text for the default color */
+#workspaces,
+#window,
+#keyboard-state,
+#custom-pacman,
+#clock,
+#pulseaudio,
+#network,
+#custom-bluetooth,
+#custom-hyprsunset,
+#backlight,
+#battery,
+#tray {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 8px;
+    border-radius: 6px;
+    transition: none;
+    background: #313244;
+    /* Surface0 */
+    color: #cdd6f4;
+    /* Text */
 }
 
-#custom-apps:hover {
-    background: rgba(46, 35, 17, 0.533);
-}
-
-/* Active window */
-#window {
-    background: #efeee9;
-    color: #3d2f22;
-    padding: 0 20px;
-    border-radius: 100px;
-    margin-left: 10px;
-}
-
-
-
-/* CENTER MODULES */
-
-/* Workspaces */
 #workspaces {
-    background: #efeee9;
-    color: #3d2f22;
-    padding: 0 10px;
-    border-radius: 200px;
-    transition: all 0.3s ease;
-}
-#workspaces button {
-    color: rgba(195,154,28, 128);
-}
-
-#workspaces button.active {
-    color: #641e1e;
-    margin-top: 4px;
-    margin-bottom: 4px;
-}
-
-
-
-/* RIGHT MODULES */
-
-/* Clock */
-#clock {
-    background: #efeee9;
-    color: #3d2f22;
-    padding: 0 20px;
-    border-radius: 200px;
-}
-
-/* CPU Usage */
-#cpu {
-    border: 2px solid #efeee9;
-    border-radius: 200px;
-    padding: 0 20px;
-}
-
-/* Memory Usage */
-#memory {
-    border: 2px solid #efeee9;
-    border-radius: 200px;
-    padding: 0 20px;
-}
-
-/* Audio Controls */
-#custom-audio {
-  border: 2px solid #efeee9;
-  border-radius: 200px;
-  padding: 0 20px;
-}
-
-/* Brightness Controls */
-#custom-brightness {
-  border: 2px solid #efeee9;
-  border-radius: 200px;
-  padding: 0 20px;
-}
-
-/* Wifi Network */
-#network {
-    background: #efeee9;
-    color: #3d2f22;
-    border-radius: 200px;
-    padding: 0 20px;
-}
-
-/* Battery */
-#battery {
-    border: 2px solid #efeee9;
-    border-radius: 200px;
-    padding: 0 20px;
-}
-
-/* Power Menu */
-#custom-power {
-    background: #efeee9;
-    color: #3d2f22;
-    padding: 0 20px;
-    margin-right: 10px;
-    border-radius: 200px;
-}
-
-
-/**/
-
-
-
-#window, #workspaces, #clock, #network, #custom-power {
-    background: #efeee9;
-    color: #3b2d26;
-    border-radius: 20px;
-    border: 1.5px solid #c2a35e;
-    padding: 0 16px;
-    box-shadow: 0 0 6px rgba(194, 163, 94, 0.3);
-}
-
-#clock {
-  font-family: "IM Fell English SC", "Literata", "Geist Mono Nerd Font", monospace;
-  font-size: 22px;
-}
-
-#custom-apps, #cpu, #memory, #custom-audio, #custom-brightness, #battery {
-    border: 1.5px solid #e3bf6f;
-    color: #e3bf6f;
-    border-radius: 200px;
-    padding: 0 16px;
-    background: rgba(59, 45, 38, 0.5);
-    transition: all 0.3s ease;
-}
-
-#custom-apps:hover {
-    background: rgba(194, 163, 94, 0.2);
+    margin-top: 0px;
 }
 
 #workspaces button {
-    color: #5a4637;
+    background: transparent;
+    padding: 5px;
+    font-size: 18px;
+    color: #cdd6f4;
+    /* Text */
 }
 
+#workspaces button:hover {
+    background: #45475a;
+    /* Surface1 */
+    border-radius: 4px;
+}
+
+/* Using Blue for the active workspace indicator */
 #workspaces button.active {
-    color: #8c3d3d;
-    background: rgba(194, 163, 94, 0.2);
-    border-radius: 100px;
-    margin: 4px;
+    color: #cba6f7;
+    /* Mauve */
+}
+
+/* Using Green for muted state */
+#pulseaudio.muted {
+    background-color: #a6e3a1;
+    /* Green */
+    color: #1e1e2e;
+    /* Base */
+}
+
+/* Using Green for charging state */
+#battery.charging {
+    color: #1e1e2e;
+    /* Base */
+    background-color: #a6e3a1;
+    /* Green */
+}
+
+/* Using Yellow for warning state */
+#battery.warning:not(.charging) {
+    background-color: #f9e2af;
+    /* Yellow */
+    color: #1e1e2e;
+    /* Base */
+}
+
+/* Using Red for critical state */
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    /* Red */
+    color: #1e1e2e;
+    /* Base */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #cdd6f4;
+        /* Text */
+        color: #1e1e2e;
+        /* Base */
+    }
+}
+
+/* Using Yellow for active state */
+#custom-hyprsunset.active {
+    color: #f9e2af; /* Catppuccin Yellow */
 }
